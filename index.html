@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ВебМузей - Главная</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            background-color: #e74c3c;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        nav {
+            background-color: #34495e;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-right: 20px;
+            position: relative;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+        nav ul li a:hover {
+            background-color: #2c3e50;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #34495e;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        main {
+            display: flex;
+            min-height: 500px;
+        }
+        .content {
+            flex: 3;
+            padding: 20px;
+            background-color: white;
+        }
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .news-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ЛОГО</div>
+        <h1>ВебМузей - Подписка на музейные коллекции</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li class="dropdown">
+                <a href="collections.html">Коллекции</a>
+                <div class="dropdown-content">
+                    <a href="collections.html#history">Исторические</a>
+                    <a href="collections.html#art">Искусство</a>
+                    <a href="collections.html#science">Научные</a>
+                </div>
+            </li>
+            <li><a href="pricing.html">Тарифы</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="news.html">Новости</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="login.html">Вход</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <div class="content">
+            <h2>Добро пожаловать в ВебМузей!</h2>
+            <p>Откройте для себя мир искусства и истории с нашей подпиской на музейные коллекции. Получите доступ к тысячам оцифрованных экспонатов и виртуальным турам по лучшим музеям мира.</p>
+            
+            <h3>Популярные коллекции</h3>
+            <div class="news-item">
+                <h4>Эрмитаж - Золото скифов</h4>
+                <p>Уникальная коллекция золотых изделий скифской эпохи из собрания Государственного Эрмитажа.</p>
+                <a href="collection1.html">Подробнее</a>
+            </div>
+            <div class="news-item">
+                <h4>Третьяковская галерея - Русские художники</h4>
+                <p>Шедевры русской живописи XVIII-XX веков в высоком разрешении с аудиогидами.</p>
+                <a href="collection2.html">Подробнее</a>
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            <h3>Быстрые ссылки</h3>
+            <ul>
+                <li><a href="pricing.html">Тарифы и подписка</a></li>
+                <li><a href="virtual-tours.html">Виртуальные туры</a></li>
+                <li><a href="personal-collections.html">Личные коллекции</a></li>
+                <li><a href="gift-cards.html">Подарочные карты</a></li>
+            </ul>
+            
+            <h3>Счетчик посетителей</h3>
+            <p>Посетителей сегодня: 127</p>
+            <p>Всего посетителей: 5423</p>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2025 ВебМузей - Подписка на музейные коллекции</p>
+        <p>Телефон: +7 (123) 456-78-90 | Email: info@webmuseum.ru</p>
+        <p>Адрес: г. Бугуруслан, ул. Музейная, д. 1</p>
+    </footer>
+</body>
+</html>
