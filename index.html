@@ -3,154 +3,498 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ВебМузей - Главная</title>
+    <title>Подписка на музейные коллекции</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
         header {
             background-color: #2c3e50;
             color: white;
             padding: 20px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
         }
+        
         .logo {
-            width: 80px;
-            height: 80px;
-            background-color: #e74c3c;
-            margin-right: 20px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-weight: bold;
         }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .auth-buttons button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .login-btn {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .register-btn {
+            background-color: #27ae60;
+            color: white;
+        }
+        
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        
         nav {
+            width: 250px;
             background-color: #34495e;
-            padding: 10px;
+            color: white;
+            padding: 20px 0;
         }
+        
         nav ul {
             list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
         }
-        nav ul li {
-            margin-right: 20px;
+        
+        nav li {
             position: relative;
         }
-        nav ul li a {
+        
+        nav a {
+            display: block;
             color: white;
             text-decoration: none;
-            padding: 5px 10px;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
         }
-        nav ul li a:hover {
+        
+        nav a:hover {
             background-color: #2c3e50;
         }
-        .dropdown-content {
+        
+        .submenu {
             display: none;
-            position: absolute;
-            background-color: #34495e;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
+            background-color: #2c3e50;
+            padding-left: 15px;
         }
-        .dropdown:hover .dropdown-content {
+        
+        .has-submenu:hover .submenu {
             display: block;
         }
+        
         main {
-            display: flex;
-            min-height: 500px;
-        }
-        .content {
-            flex: 3;
-            padding: 20px;
-            background-color: white;
-        }
-        .sidebar {
             flex: 1;
             padding: 20px;
             background-color: #ecf0f1;
         }
+        
+        .page-title {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
         footer {
             background-color: #2c3e50;
             color: white;
-            text-align: center;
             padding: 20px;
+            text-align: center;
         }
-        .news-item {
+        
+        .contact-info {
+            margin-bottom: 10px;
+        }
+        
+        .visitor-counter {
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+        
+        /* Административная панель */
+        .admin-panel {
+            display: none;
+            background-color: #e74c3c;
+            padding: 10px 20px;
+        }
+        
+        .admin-panel a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        /* Формы */
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+        }
+        
+        .submit-btn {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        /* Таблицы */
+        table {
+            width: 100%;
+            border-collapse: collapse;
             margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #ddd;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .action-btn {
+            padding: 5px 10px;
+            margin-right: 5px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        .edit-btn {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .delete-btn {
+            background-color: #e74c3c;
+            color: white;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">ЛОГО</div>
-        <h1>ВебМузей - Подписка на музейные коллекции</h1>
+        <div class="logo">
+            <img src="https://via.placeholder.com/50x50" alt="Логотип">
+            <h1>ВЕБМУЗЕЙ</h1>
+        </div>
+        <div class="auth-buttons">
+            <button class="login-btn" onclick="showLoginForm()">Вход</button>
+            <button class="register-btn" onclick="showRegisterForm()">Регистрация</button>
+        </div>
     </header>
     
-    <nav>
-        <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li class="dropdown">
-                <a href="collections.html">Коллекции</a>
-                <div class="dropdown-content">
-                    <a href="collections.html#history">Исторические</a>
-                    <a href="collections.html#art">Искусство</a>
-                    <a href="collections.html#science">Научные</a>
-                </div>
-            </li>
-            <li><a href="pricing.html">Тарифы</a></li>
-            <li><a href="about.html">О нас</a></li>
-            <li><a href="news.html">Новости</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-            <li><a href="login.html">Вход</a></li>
-        </ul>
-    </nav>
+    <div class="admin-panel" id="adminPanel">
+        <a href="#">Управление пользователями</a>
+        <a href="#">Управление разделами</a>
+        <a href="#">Управление контентом</a>
+        <a href="#">Статистика</a>
+    </div>
     
-    <main>
-        <div class="content">
-            <h2>Добро пожаловать в ВебМузей!</h2>
-            <p>Откройте для себя мир искусства и истории с нашей подпиской на музейные коллекции. Получите доступ к тысячам оцифрованных экспонатов и виртуальным турам по лучшим музеям мира.</p>
-            
-            <h3>Популярные коллекции</h3>
-            <div class="news-item">
-                <h4>Эрмитаж - Золото скифов</h4>
-                <p>Уникальная коллекция золотых изделий скифской эпохи из собрания Государственного Эрмитажа.</p>
-                <a href="collection1.html">Подробнее</a>
-            </div>
-            <div class="news-item">
-                <h4>Третьяковская галерея - Русские художники</h4>
-                <p>Шедевры русской живописи XVIII-XX веков в высоком разрешении с аудиогидами.</p>
-                <a href="collection2.html">Подробнее</a>
-            </div>
-        </div>
-        
-        <div class="sidebar">
-            <h3>Быстрые ссылки</h3>
+    <div class="container">
+        <nav>
             <ul>
-                <li><a href="pricing.html">Тарифы и подписка</a></li>
-                <li><a href="virtual-tours.html">Виртуальные туры</a></li>
-                <li><a href="personal-collections.html">Личные коллекции</a></li>
-                <li><a href="gift-cards.html">Подарочные карты</a></li>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li class="has-submenu">
+                    <a href="products.html">О продукции</a>
+                    <ul class="submenu">
+                        <li><a href="products-list.html">Перечень товаров и услуг</a></li>
+                        <li><a href="price.html">Прайс-лист</a></li>
+                    </ul>
+                </li>
+                <li><a href="work.html">Как мы работаем</a></li>
+                <li><a href="faq.html">Вопросы и ответы</a></li>
+                <li class="has-submenu">
+                    <a href="trainings.html">Тренинги, семинары</a>
+                    <ul class="submenu">
+                        <li><a href="registration.html">Регистрационная форма</a></li>
+                    </ul>
+                </li>
+                <li><a href="vacancies.html">Вакансии</a></li>
+                <li><a href="info.html">Справочная информация</a></li>
+                <li><a href="contract.html">Типовой договор</a></li>
+                <li><a href="partners.html">Партнеры, агенты</a></li>
+                <li><a href="sitemap.html">Карта сайта</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
             </ul>
-            
-            <h3>Счетчик посетителей</h3>
-            <p>Посетителей сегодня: 127</p>
-            <p>Всего посетителей: 5423</p>
-        </div>
-    </main>
+        </nav>
+        
+        <main>
+            <h1 class="page-title">Главная страница</h1>
+            <div class="content">
+                <h2>Добро пожаловать на сайт "Подписка на музейные коллекции"</h2>
+                <p>Наш сайт предоставляет уникальную возможность получить доступ к оцифрованным коллекциям ведущих музеев мира. Подпишитесь на интересующие вас коллекции и изучайте культурное наследие в удобном для вас формате.</p>
+                
+                <h3>Популярные коллекции</h3>
+                <div class="collections">
+                    <div class="collection-item">
+                        <h4>Эрмитаж</h4>
+                        <p>Более 3 миллионов экспонатов, включая произведения Леонардо да Винчи, Рембрандта и других мастеров.</p>
+                    </div>
+                    <div class="collection-item">
+                        <h4>Лувр</h4>
+                        <p>Коллекция от античности до середины XIX века, включая Мону Лизу и Венеру Милосскую.</p>
+                    </div>
+                    <div class="collection-item">
+                        <h4>Метрополитен-музей</h4>
+                        <p>Более 2 миллионов произведений искусства за 5000 лет истории.</p>
+                    </div>
+                </div>
+                
+                <h3>Новости</h3>
+                <div class="news-preview">
+                    <div class="news-item">
+                        <h4>Новая коллекция: Русский авангард</h4>
+                        <p>Добавлена коллекция работ Малевича, Кандинского и других художников русского авангарда.</p>
+                        <a href="news.html">Читать далее</a>
+                    </div>
+                    <div class="news-item">
+                        <h4>Обновление интерфейса</h4>
+                        <p>Мы улучшили навигацию по сайту и добавили новые функции для подписчиков.</p>
+                        <a href="news.html">Читать далее</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
     
     <footer>
-        <p>© 2025 ВебМузей - Подписка на музейные коллекции</p>
-        <p>Телефон: +7 (123) 456-78-90 | Email: info@webmuseum.ru</p>
-        <p>Адрес: г. Бугуруслан, ул. Музейная, д. 1</p>
+        <div class="contact-info">
+            <p>ООО "ВЕБМУЗЕЙ" | г. Бугуруслан, ул. Музейная, 15 | тел.: +7 (123) 456-78-90 | email: info@webmuseum.ru</p>
+        </div>
+        <div class="visitor-counter">
+            <p>Посетителей сегодня: <span id="counter">1245</span></p>
+        </div>
     </footer>
+    
+    <!-- Модальные окна -->
+    <div id="loginModal" class="modal" style="display:none;">
+        <div class="form-container">
+            <h2>Вход в систему</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="login">Логин:</label>
+                    <input type="text" id="login" name="login" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="submit-btn">Войти</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="registerModal" class="modal" style="display:none;">
+        <div class="form-container">
+            <h2>Регистрация</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="fullName">ФИО:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <button type="submit" class="submit-btn">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="adminModal" class="modal" style="display:none;">
+        <div class="form-container">
+            <h2>Административная панель</h2>
+            <div class="admin-options">
+                <h3>Управление пользователями</h3>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Имя</th>
+                        <th>Email</th>
+                        <th>Роль</th>
+                        <th>Действия</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Иванов Иван</td>
+                        <td>ivanov@example.com</td>
+                        <td>Редактор</td>
+                        <td>
+                            <button class="action-btn edit-btn">Изменить</button>
+                            <button class="action-btn delete-btn">Удалить</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Петрова Анна</td>
+                        <td>petrova@example.com</td>
+                        <td>Посетитель</td>
+                        <td>
+                            <button class="action-btn edit-btn">Изменить</button>
+                            <button class="action-btn delete-btn">Удалить</button>
+                        </td>
+                    </tr>
+                </table>
+                <button class="submit-btn">Добавить пользователя</button>
+                
+                <h3>Управление разделами</h3>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Название</th>
+                        <th>URL</th>
+                        <th>Действия</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Главная</td>
+                        <td>index.html</td>
+                        <td>
+                            <button class="action-btn edit-btn">Изменить</button>
+                            <button class="action-btn delete-btn">Удалить</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Новости</td>
+                        <td>news.html</td>
+                        <td>
+                            <button class="action-btn edit-btn">Изменить</button>
+                            <button class="action-btn delete-btn">Удалить</button>
+                        </td>
+                    </tr>
+                </table>
+                <button class="submit-btn">Добавить раздел</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Счетчик посетителей
+        let counter = localStorage.getItem('visitorCounter');
+        if (!counter) {
+            counter = 1245;
+        } else {
+            counter = parseInt(counter) + 1;
+        }
+        localStorage.setItem('visitorCounter', counter);
+        document.getElementById('counter').textContent = counter;
+        
+        // Функции для модальных окон
+        function showLoginForm() {
+            document.getElementById('loginModal').style.display = 'block';
+            document.getElementById('registerModal').style.display = 'none';
+        }
+        
+        function showRegisterForm() {
+            document.getElementById('registerModal').style.display = 'block';
+            document.getElementById('loginModal').style.display = 'none';
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        
+        // Обработка форм
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const login = document.getElementById('login').value;
+            const password = document.getElementById('password').value;
+            
+            // Здесь должна быть проверка логина и пароля
+            // Для демонстрации просто покажем админ-панель
+            if (login === 'admin' && password === 'admin123') {
+                document.getElementById('adminPanel').style.display = 'block';
+                document.getElementById('loginModal').style.display = 'none';
+            } else {
+                alert('Неверный логин или пароль');
+            }
+        });
+        
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Регистрация успешно завершена. На ваш email отправлено письмо с подтверждением.');
+            document.getElementById('registerModal').style.display = 'none';
+        });
+        
+        // Закрытие модальных окон при клике вне их
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
