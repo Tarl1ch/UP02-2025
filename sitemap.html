@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта сайта - Подписка на музейные коллекции</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Стили для карты сайта */
+        .sitemap-container {
+            margin-top: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .sitemap-section {
+            margin-bottom: 40px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .sitemap-section h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        .sitemap-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .sitemap-item {
+            padding: 12px 15px;
+            background: #f9f9f9;
+            border-radius: 6px;
+            transition: all 0.3s;
+            border-left: 3px solid #3498db;
+        }
+        
+        .sitemap-item:hover {
+            background: #e8f4fc;
+            transform: translateX(5px);
+        }
+        
+        .sitemap-item a {
+            color: #2c3e50;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .sitemap-divider {
+            height: 1px;
+            background: #eee;
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .sitemap-items {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://i.pinimg.com/736x/de/b9/89/deb989dcc92f499d398503087349576f.jpg" alt="Логотип музея">
+                <h1>Музейные коллекции</h1>
+            </div>
+            <nav class="side-menu">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="menu-category">Коллекции</li>
+                    <li><a href="collections.html">Все коллекции</a></li>
+                    <li><a href="painting.html">Живопись</a></li>
+                    <li><a href="sculpture.html">Скульптура</a></li>
+                    <li><a href="archeology.html">Археология</a></li>
+                    <li class="menu-category">Информация</li>
+                    <li><a href="about.html">О проекте</a></li>
+                    <li><a href="sitemap.html">Карта сайта</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="pricing.html">Тарифы</a></li>
+                    <li><a href="how-it-works.html">Как это работает</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li class="menu-category">Компания</li>
+                    <li><a href="about-company.html">О компании</a></li>
+                    <li><a href="partners.html">Партнеры</a></li>
+                    <li><a href="vacancies.html">Вакансии</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li class="menu-category">Аккаунт</li>
+                     <li><a href="profile.html">Профиль</a></li>
+                    <li><a href="login.html">Войти</a></li>
+                    <li><a href="register.html">Регистрация</a></li>
+                    <li><a href="admin.html">Админ-панель</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>© 2025 Музейные коллекции</p>
+                <div id="counter">
+                    <img src="https://counter.yadro.ru/hit?t44.1;rhttps%3A%2F%2Fexample.com%2F;s1600*1200*24;uhttps%3A%2F%2Fexample.com%2Fsitemap.html;0.9" 
+                         alt="Счетчик" title="Счетчик посещений" border="0" width="1" height="1">
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Карта сайта</h2>
+                <p>Полная структура нашего веб-сайта для удобной навигации</p>
+            </header>
+
+            <div class="sitemap-container">
+                <div class="sitemap-section">
+                    <h3>Главная страница</h3>
+                    <div class="sitemap-items">
+                        <div class="sitemap-item"><a href="index.html">Главная</a></div>
+                        <div class="sitemap-item"><a href="news.html">События</a></div>
+                        <div class="sitemap-item"><a href="faq.html">Вопросы</a></div>
+                        <div class="sitemap-item"><a href="login.html">Регистрация/Вход</a></div>
+                    </div>
+                </div>
+
+                <div class="sitemap-divider"></div>
+
+                <div class="sitemap-section">
+                    <h3>Коллекции</h3>
+                    <div class="sitemap-items">
+                        <div class="sitemap-item"><a href="collections.html">Все коллекции</a></div>
+                        <div class="sitemap-item"><a href="painting.html">Живопись</a></div>
+                        <div class="sitemap-item"><a href="sculpture.html">Скульптура</a></div>
+                        <div class="sitemap-item"><a href="archeology.html">Археология</a></div>
+                    </div>
+                </div>
+
+                <div class="sitemap-divider"></div>
+
+                <div class="sitemap-section">
+                    <h3>О компании</h3>
+                    <div class="sitemap-items">
+                        <div class="sitemap-item"><a href="about-company.html">История</a></div>
+                        <div class="sitemap-item"><a href="about-company.html">Миссия</a></div>
+                        <div class="sitemap-item"><a href="vacancies.html">Вакансии</a></div>
+                        <div class="sitemap-item"><a href="partners.html">Партнеры</a></div>
+                        <div class="sitemap-item"><a href="contacts.html">Контакты</a></div>
+                    </div>
+                </div>
+
+                <div class="sitemap-divider"></div>
+
+                <div class="sitemap-section">
+                    <h3>Партнерам</h3>
+                    <div class="sitemap-items">
+                        <div class="sitemap-item"><a href="partners.html">Контактная информация</a></div>
+                        <div class="sitemap-item"><a href="how-it-works.html">Технические требования</a></div>
+                    </div>
+                </div>
+            </div>
+                    <a href="files/sitemap.vsdx" class="contract-download" download>Скачать Карту сайта (vsdx, 33 КБ)</a>
+                   
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
