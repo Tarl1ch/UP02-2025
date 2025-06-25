@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Подписка на музейные коллекции</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Стили для страницы контактов */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .contact-info {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+        }
+        
+        .contact-info h3 {
+            color: #2c3e50;
+            margin-top: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .contact-info p {
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        
+        .contact-form {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        #map {
+            height: 400px;
+            margin-top: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://i.pinimg.com/736x/de/b9/89/deb989dcc92f499d398503087349576f.jpg" alt="Логотип музея">
+                <h1>Музейные коллекции</h1>
+            </div>
+             <nav class="side-menu">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="menu-category">Коллекции</li>
+                    <li><a href="collections.html">Все коллекции</a></li>
+                    <li><a href="painting.html">Живопись</a></li>
+                    <li><a href="sculpture.html">Скульптура</a></li>
+                    <li><a href="archeology.html">Археология</a></li>
+                    <li class="menu-category">Информация</li>
+                    <li><a href="about.html">О проекте</a></li>
+                    <li><a href="sitemap.html">Карта сайта</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="pricing.html">Тарифы</a></li>
+                    <li><a href="how-it-works.html">Как это работает</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li class="menu-category">Компания</li>
+                    <li><a href="about-company.html">О компании</a></li>
+                    <li><a href="partners.html">Партнеры</a></li>
+                    <li><a href="vacancies.html">Вакансии</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li class="menu-category">Аккаунт</li>
+                     <li><a href="profile.html">Профиль</a></li>
+                    <li><a href="login.html">Войти</a></li>
+                    <li><a href="register.html">Регистрация</a></li>
+                    <li><a href="admin.html">Админ-панель</a></li>
+                </ul>
+            <div class="footer-info">
+                <p>© 2025 Музейные коллекции</p>
+                <div id="counter">
+                    <img src="https://counter.yadro.ru/hit?t44.1;rhttps%3A%2F%2Fexample.com%2F;s1600*1200*24;uhttps%3A%2F%2Fexample.com%2Fcontacts.html;0.9" 
+                         alt="Счетчик" title="Счетчик посещений" border="0" width="1" height="1">
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Контакты</h2>
+                <p>Свяжитесь с нами для сотрудничества, поддержки или предложений</p>
+            </header>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Адрес</h3>
+                    <p>г. Бугуруслан, ул. Музейная, 15<br>Оренбургская область, Россия, 461630</p>
+                    
+                    <h3>Телефоны</h3>
+                    <p>
+                        <strong>Техподдержка:</strong> +7 (35352) 5-55-55<br>
+                        <strong>Отдел партнерств:</strong> +7 (35352) 5-55-56
+                    </p>
+                    
+                    <h3>Email</h3>
+                    <p>
+                        <strong>Общие вопросы:</strong> info@museum-collections.ru<br>
+                        <strong>Техподдержка:</strong> support@museum-collections.ru
+                    </p>
+                    
+                    <h3>Режим работы</h3>
+                    <p>
+                        Пн-Пт: 9:00–18:00<br>
+                        Сб-Вс: выходной
+                    </p>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Форма обратной связи</h3>
+                    <form id="feedback-form">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Тема сообщения">
+                        <textarea placeholder="Ваше сообщение" required></textarea>
+                        <button type="submit" class="btn primary">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="map"></div>
+            <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=ваш_API_ключ"></script>
+            <script>
+                ymaps.ready(function() {
+                    var map = new ymaps.Map("map", {
+                        center: [53.62, 52.41], // Координаты Бугуруслана
+                        zoom: 15
+                    });
+                    
+                    var placemark = new ymaps.Placemark([53.62, 52.41], {
+                        hintContent: 'Офис Музейных коллекций',
+                        balloonContent: 'ул. Музейная, 15'
+                    });
+                    
+                    map.geoObjects.add(placemark);
+                    map.controls.remove('searchControl'); // Убираем поиск
+                });
+            </script>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
