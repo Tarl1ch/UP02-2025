@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ-панель</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .admin-panel {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .action-btn {
+      padding: 5px 10px;
+      margin-right: 5px;
+    }
+    .danger {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+   <aside class="sidebar">
+            <div class="logo">
+                <img src="https://i.pinimg.com/736x/de/b9/89/deb989dcc92f499d398503087349576f.jpg" alt="Логотип музея">
+                <h1>Музейные коллекции</h1>
+            </div>
+           <nav class="side-menu">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="menu-category">Коллекции</li>
+                    <li><a href="collections.html">Все коллекции</a></li>
+                    <li><a href="painting.html">Живопись</a></li>
+                    <li><a href="sculpture.html">Скульптура</a></li>
+                    <li><a href="archeology.html">Археология</a></li>
+                    <li class="menu-category">Информация</li>
+                    <li><a href="about.html">О проекте</a></li>
+                    <li><a href="sitemap.html">Карта сайта</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="pricing.html">Тарифы</a></li>
+                    <li><a href="how-it-works.html">Как это работает</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li class="menu-category">Компания</li>
+                    <li><a href="about-company.html">О компании</a></li>
+                    <li><a href="partners.html">Партнеры</a></li>
+                    <li><a href="vacancies.html">Вакансии</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li class="menu-category">Аккаунт</li>
+                     <li><a href="profile.html">Профиль</a></li>
+                    <li><a href="login.html">Войти</a></li>
+                    <li><a href="register.html">Регистрация</a></li>
+                    <li><a href="admin.html">Админ-панель</a></li>
+                </ul>
+            <div class="footer-info">
+                <p>© 2025 Музейные коллекции</p>
+            </div>
+        </aside>
+  <div class="admin-panel">
+    <h1>Админ-панель</h1>
+    <div class="admin-actions">
+      <button id="addUserBtn" class="btn">Добавить пользователя</button>
+    </div>
+    
+    <table id="usersTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Имя</th>
+          <th>Email</th>
+          <th>Роль</th>
+          <th>Дата регистрации</th>
+          <th>Действия</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Модальное окно для добавления/редактирования -->
+  <div id="userModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle">Добавить пользователя</h2>
+      <form id="userForm">
+        <input type="hidden" id="userId">
+        <div class="form-group">
+          <label for="modalName">Имя:</label>
+          <input type="text" id="modalName" required>
+        </div>
+        <div class="form-group">
+          <label for="modalEmail">Email:</label>
+          <input type="email" id="modalEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="modalPassword">Пароль:</label>
+          <input type="password" id="modalPassword">
+        </div>
+        <div class="form-group">
+          <label for="modalRole">Роль:</label>
+          <select id="modalRole" required>
+            <option value="user">Пользователь</option>
+            <option value="editor">Редактор</option>
+            <option value="admin">Администратор</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>
