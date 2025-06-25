@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Партнеры - Подписка на музейные коллекции</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Дополнительные стили для страницы партнеров */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .partner-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .partner-card img {
+            max-height: 100px;
+            max-width: 100%;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+        
+        .partner-card h3 {
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .partner-card p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://i.pinimg.com/736x/de/b9/89/deb989dcc92f499d398503087349576f.jpg" alt="Логотип музея">
+                <h1>Музейные коллекции</h1>
+            </div>
+             <nav class="side-menu">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="menu-category">Коллекции</li>
+                    <li><a href="collections.html">Все коллекции</a></li>
+                    <li><a href="painting.html">Живопись</a></li>
+                    <li><a href="sculpture.html">Скульптура</a></li>
+                    <li><a href="archeology.html">Археология</a></li>
+                    <li class="menu-category">Информация</li>
+                    <li><a href="about.html">О проекте</a></li>
+                    <li><a href="sitemap.html">Карта сайта</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="pricing.html">Тарифы</a></li>
+                    <li><a href="how-it-works.html">Как это работает</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li class="menu-category">Компания</li>
+                    <li><a href="about-company.html">О компании</a></li>
+                    <li><a href="partners.html">Партнеры</a></li>
+                    <li><a href="vacancies.html">Вакансии</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li class="menu-category">Аккаунт</li>
+                     <li><a href="profile.html">Профиль</a></li>
+                    <li><a href="login.html">Войти</a></li>
+                    <li><a href="register.html">Регистрация</a></li>
+                    <li><a href="admin.html">Админ-панель</a></li>
+                </ul>
+            <div class="footer-info">
+                <p>© 2025 Музейные коллекции</p>
+                <div id="counter">
+                    <!-- Счетчик посещений -->
+                    <img src="https://counter.yadro.ru/hit?t44.1;rhttps%3A%2F%2Fexample.com%2F;s1600*1200*24;uhttps%3A%2F%2Fexample.com%2Fpartners.html;0.9" 
+                         alt="Счетчик" title="Счетчик посещений" border="0" width="1" height="1">
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Наши партнеры</h2>
+                <p>Сотрудничаем с ведущими музеями мира для сохранения и популяризации культурного наследия</p>
+            </header>
+
+            <section class="partners-grid">
+                <div class="partner-card">
+                    <img src="images/hermitage.jpg" alt="Государственный Эрмитаж">
+                    <h3>Государственный Эрмитаж</h3>
+                    <p>Санкт-Петербург, Россия. Более 500 экспонатов из коллекции Эрмитажа доступны в нашем каталоге.</p>
+                </div>
+                
+                <div class="partner-card">
+                    <img src="images/louvre.jpg" alt="Лувр">
+                    <h3>Лувр</h3>
+                    <p>Париж, Франция. Виртуальные туры по залам музея и шедевры европейской живописи.</p>
+                </div>
+                
+                <div class="partner-card">
+                    <img src="images/met.jpg" alt="Метрополитен-музей">
+                    <h3>Метрополитен-музей</h3>
+                    <p>Нью-Йорк, США. Коллекция американского и европейского искусства XVII-XX веков.</p>
+                </div>
+                
+                <div class="partner-card">
+                    <img src="Images/british-museum.jpg" alt="Британский музей">
+                    <h3>Британский музей</h3>
+                    <p>Лондон, Великобритания. Археологические артефакты древних цивилизаций.</p>
+                </div>
+                
+                <div class="partner-card">
+                    <img src="images/tretyakov.jpg" alt="Третьяковская галерея">
+                    <h3>Третьяковская галерея</h3>
+                    <p>Москва, Россия. Шедевры русской живописи от икон до авангарда.</p>
+                </div>
+                
+                <div class="partner-card">
+                    <img src="images/uffizi.jpg" alt="Галерея Уффици">
+                    <h3>Галерея Уффици</h3>
+                    <p>Флоренция, Италия. Работы мастеров эпохи Возрождения.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
