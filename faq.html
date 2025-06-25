@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Подписка на музейные коллекции</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Стили для страницы FAQ */
+        .faq-container {
+            margin-top: 30px;
+        }
+        
+        .faq-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .category-btn {
+            padding: 8px 15px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        
+        .faq-section {
+            margin-bottom: 40px;
+        }
+        
+        .faq-section h3 {
+            color: #2c3e50;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 15px 20px;
+            background: #f9f9f9;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question::after {
+            content: "+";
+            font-size: 1.2rem;
+        }
+        
+        .faq-question.active::after {
+            content: "-";
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-answer-content {
+            padding: 15px 0;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+        }
+        
+        .quick-link {
+            padding: 8px 15px;
+            background: #e8f4fc;
+            color: #2c3e50;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .faq-question {
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://i.pinimg.com/736x/de/b9/89/deb989dcc92f499d398503087349576f.jpg" alt="Логотип музея">
+                <h1>Музейные коллекции</h1>
+            </div>
+            <nav class="side-menu">
+               <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="menu-category">Коллекции</li>
+                    <li><a href="collections.html">Все коллекции</a></li>
+                    <li><a href="painting.html">Живопись</a></li>
+                    <li><a href="sculpture.html">Скульптура</a></li>
+                    <li><a href="archeology.html">Археология</a></li>
+                    <li class="menu-category">Информация</li>
+                    <li><a href="about.html">О проекте</a></li>
+                    <li><a href="sitemap.html">Карта сайта</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="pricing.html">Тарифы</a></li>
+                    <li><a href="how-it-works.html">Как это работает</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li class="menu-category">Компания</li>
+                    <li><a href="about-company.html">О компании</a></li>
+                    <li><a href="partners.html">Партнеры</a></li>
+                    <li><a href="vacancies.html">Вакансии</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li class="menu-category">Аккаунт</li>
+                     <li><a href="profile.html">Профиль</a></li>
+                    <li><a href="login.html">Войти</a></li>
+                    <li><a href="register.html">Регистрация</a></li>
+                    <li><a href="admin.html">Админ-панель</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>© 2025 Музейные коллекции</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Часто задаваемые вопросы</h2>
+                <p>Найдите ответы на популярные вопросы о нашем сервисе</p>
+            </header>
+
+            <div class="faq-container">
+                <div class="quick-links">
+                    <a href="#account" class="quick-link">Аккаунт</a>
+                    <a href="#subscription" class="quick-link">Подписка</a>
+                    <a href="#content" class="quick-link">Контент</a>
+                    <a href="#technical" class="quick-link">Техподдержка</a>
+                </div>
+
+                <div class="faq-categories">
+                    <div class="category-btn active" data-category="all">Все вопросы</div>
+                    <div class="category-btn" data-category="account">Аккаунт</div>
+                    <div class="category-btn" data-category="subscription">Подписка</div>
+                    <div class="category-btn" data-category="content">Контент</div>
+                    <div class="category-btn" data-category="technical">Техподдержка</div>
+                </div>
+
+                <div class="faq-section" id="account">
+                    <h3>Аккаунт и регистрация</h3>
+                    
+                    <div class="faq-item" data-category="account">
+                        <div class="faq-question">Как зарегистрировать аккаунт?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Для регистрации:</p>
+                                <ol>
+                                    <li>Перейдите на страницу <a href="register.html">регистрации</a></li>
+                                    <li>Заполните форму (email, пароль, имя)</li>
+                                    <li>Подтвердите email по ссылке из письма</li>
+                                    <li>Войдите в систему со своими данными</li>
+                                </ol>
+                                <p>Регистрация занимает не более 2 минут.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="account">
+                        <div class="faq-question">Я забыл пароль. Как восстановить доступ?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>На странице <a href="login.html">входа</a> нажмите "Забыли пароль?". Введите email, указанный при регистрации. Вы получите письмо с инструкциями по сбросу пароля. Ссылка в письме действительна 24 часа.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-section" id="subscription">
+                    <h3>Подписка и оплата</h3>
+                    
+                    <div class="faq-item" data-category="subscription">
+                        <div class="faq-question">Как оплатить подписку?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Доступны несколько способов оплаты:</p>
+                                <ul>
+                                    <li>Банковские карты (Visa, Mastercard, МИР)</li>
+                                    <li>Apple Pay/Google Pay</li>
+                                    <li>Электронные кошельки (Qiwi, WebMoney)</li>
+                                    <li>Банковский перевод для юридических лиц</li>
+                                </ul>
+                                <p>Оплата проходит через защищенное соединение.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="subscription">
+                        <div class="faq-question">Можно ли отменить подписку?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Да, вы можете отменить подписку в любое время:</p>
+                                <ol>
+                                    <li>Зайдите в <a href="profile.html">Личный кабинет</a></li>
+                                    <li>Перейдите в раздел "Подписка"</li>
+                                    <li>Нажмите "Отменить подписку"</li>
+                                </ol>
+                                <p>Доступ сохранится до конца оплаченного периода. Деньги за неиспользованный период не возвращаются.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-section" id="content">
+                    <h3>Работа с контентом</h3>
+                    
+                    <div class="faq-item" data-category="content">
+                        <div class="faq-question">Как искать нужные экспонаты?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Используйте несколько способов поиска:</p>
+                                <ul>
+                                    <li><strong>Поисковая строка</strong> - введите название, автора или ключевые слова</li>
+                                    <li><strong>Фильтры</strong> - отбор по музею, эпохе, стилю, материалу</li>
+                                    <li><strong>Тематические подборки</strong> - готовые коллекции по периодам и темам</li>
+                                </ul>
+                                <p>В премиум-тарифе доступен расширенный поиск по деталям изображений.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="content">
+                        <div class="faq-question">Можно ли скачивать изображения?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Скачивание изображений в высоком разрешении доступно только для подписчиков тарифа "Премиум" с ограничениями:</p>
+                                <ul>
+                                    <li>Не более 50 скачиваний в месяц</li>
+                                    <li>Только для личного некоммерческого использования</li>
+                                    <li>Обязательное указание авторства и источника</li>
+                                </ul>
+                                <p>Для коммерческого использования требуется отдельное согласование с музеем-правообладателем.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-section" id="technical">
+                    <h3>Технические вопросы</h3>
+                    
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question">Какие устройства поддерживаются?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Наш сервис работает на:</p>
+                                <ul>
+                                    <li><strong>ПК/Ноутбуки:</strong> Windows 10+, macOS 10.15+, Linux</li>
+                                    <li><strong>Смартфоны/Планшеты:</strong> iOS 14+, Android 10+</li>
+                                    <li><strong>Браузеры:</strong> Chrome, Firefox, Safari, Edge последних версий</li>
+                                </ul>
+                                <p>Для VR-туров требуются очки виртуальной реальности и Chrome/Firefox.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question">Почему медленно загружаются 3D-модели?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Скорость загрузки зависит от:</p>
+                                <ol>
+                                    <li>Скорости вашего интернет-соединения (рекомендуется минимум 10 Мбит/с)</li>
+                                    <li>Мощности устройства (для сложных 3D-моделей)</li>
+                                    <li>Нагрузки на наши серверы</li>
+                                </ol>
+                                <p>Рекомендации:</p>
+                                <ul>
+                                    <li>Используйте проводное подключение для ПК</li>
+                                    <li>Закройте лишние вкладки браузера</li>
+                                    <li>Обновите браузер до последней версии</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="contact-form-section">
+                    <h3>Не нашли ответ на свой вопрос?</h3>
+                    <p>Заполните форму, и мы ответим вам в течение 24 часов</p>
+                    
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name">Ваше имя</label>
+                            <input type="text" id="contact-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-question">Ваш вопрос</label>
+                            <textarea id="contact-question" rows="4" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn primary">Отправить вопрос</button>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Анимация раскрытия/закрытия вопросов
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+                
+                // Закрываем другие открытые вопросы
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Фильтрация по категориям
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+                
+                // Обновляем активную кнопку
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Показываем/скрываем вопросы
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
