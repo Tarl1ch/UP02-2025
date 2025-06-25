@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коллекции - Подписка на музейные коллекции</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://i.pinimg.com/736x/de/b9/89/deb989dcc92f499d398503087349576f.jpg" alt="Логотип музея">
+                <h1>Музейные коллекции</h1>
+            </div>
+             <nav class="side-menu">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="menu-category">Коллекции</li>
+                    <li><a href="collections.html">Все коллекции</a></li>
+                    <li><a href="painting.html">Живопись</a></li>
+                    <li><a href="sculpture.html">Скульптура</a></li>
+                    <li><a href="archeology.html">Археология</a></li>
+                    <li class="menu-category">Информация</li>
+                    <li><a href="about.html">О проекте</a></li>
+                    <li><a href="sitemap.html">Карта сайта</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="pricing.html">Тарифы</a></li>
+                    <li><a href="how-it-works.html">Как это работает</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li class="menu-category">Компания</li>
+                    <li><a href="about-company.html">О компании</a></li>
+                    <li><a href="partners.html">Партнеры</a></li>
+                    <li><a href="vacancies.html">Вакансии</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li class="menu-category">Аккаунт</li>
+                     <li><a href="profile.html">Профиль</a></li>
+                    <li><a href="login.html">Войти</a></li>
+                    <li><a href="register.html">Регистрация</a></li>
+                    <li><a href="admin.html">Админ-панель</a></li>
+                </ul>
+            <div class="footer-info">
+                <p>© 2025 Музейные коллекции</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Все коллекции</h2>
+                <div class="search-filter">
+                    <input type="text" placeholder="Поиск по коллекциям...">
+                    <select>
+                        <option>Все музеи</option>
+                        <option>Эрмитаж</option>
+                        <option>Лувр</option>
+                        <option>Метрополитен</option>
+                    </select>
+                    <select>
+                        <option>Все категории</option>
+                        <option>Живопись</option>
+                        <option>Скульптура</option>
+                        <option>Археология</option>
+                    </select>
+                </div>
+            </header>
+
+            <section class="collections-list">
+                <div class="collection-item">
+                    <img style="width: 400px; height: auto;" src="images/collection1.jpeg" alt="Коллекция 1">
+                    <div class="collection-info">
+                        <h3>Шедевры Возрождения</h3>
+                        <div class="meta">
+                            <span class="museum">Лувр</span>
+                            <span class="count">120 экспонатов</span>
+                        </div>
+                        <p>Лучшие произведения искусства эпохи Возрождения из коллекции Лувра.</p>
+                        <a href="collection-single.html" class="btn">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="collection-item">
+                    <img style="width: 400px; height: auto;" src="images/collection2.jpg" alt="Коллекция 2">
+                    <div class="collection-info">
+                        <h3>Древний Египет</h3>
+                        <div class="meta">
+                            <span class="museum">Метрополитен</span>
+                            <span class="count">85 экспонатов</span>
+                        </div>
+                        <p>Артефакты древнеегипетской цивилизации из коллекции Метрополитен-музея.</p>
+                        <a href="collection-single.html" class="btn">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="collection-item">
+                    <img style="width: 400px; height: auto;" src="images/collection3.jpg" alt="Коллекция 3">
+                    <div class="collection-info">
+                        <h3>Русское искусство XVIII-XIX вв.</h3>
+                        <div class="meta">
+                            <span class="museum">Эрмитаж</span>
+                            <span class="count">210 экспонатов</span>
+                        </div>
+                        <p>Шедевры русских художников из коллекции Государственного Эрмитажа.</p>
+                        <a href="collection-single.html" class="btn">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <a href="#" class="page-link next">→</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
