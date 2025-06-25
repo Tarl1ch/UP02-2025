@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О проекте - Подписка на музейные коллекции</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Стили для страницы "О проекте" */
+        .project-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-top: 3px solid #3498db;
+        }
+        
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-card h3::before {
+            content: "✓";
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .tech-specs {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .spec-item {
+            margin-bottom: 15px;
+        }
+        
+        .spec-item strong {
+            color: #2c3e50;
+        }
+        
+        .partners-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            margin: 30px 0;
+        }
+        
+        .partner-logo {
+            max-height: 60px;
+            max-width: 150px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .project-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .partners-logos {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://i.pinimg.com/736x/de/b9/89/deb989dcc92f499d398503087349576f.jpg" alt="Логотип музея">
+                <h1>Музейные коллекции</h1>
+            </div>
+              <nav class="side-menu">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="menu-category">Коллекции</li>
+                    <li><a href="collections.html">Все коллекции</a></li>
+                    <li><a href="painting.html">Живопись</a></li>
+                    <li><a href="sculpture.html">Скульптура</a></li>
+                    <li><a href="archeology.html">Археология</a></li>
+                    <li class="menu-category">Информация</li>
+                    <li><a href="about.html">О проекте</a></li>
+                    <li><a href="sitemap.html">Карта сайта</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="pricing.html">Тарифы</a></li>
+                    <li><a href="how-it-works.html">Как это работает</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li class="menu-category">Компания</li>
+                    <li><a href="about-company.html">О компании</a></li>
+                    <li><a href="partners.html">Партнеры</a></li>
+                    <li><a href="vacancies.html">Вакансии</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li class="menu-category">Аккаунт</li>
+                     <li><a href="profile.html">Профиль</a></li>
+                    <li><a href="login.html">Войти</a></li>
+                    <li><a href="register.html">Регистрация</a></li>
+                    <li><a href="admin.html">Админ-панель</a></li>
+                </ul>
+            <div class="footer-info">
+            <div class="footer-info">
+                <p>© 2025 Музейные коллекции</p>
+                <div id="counter">
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>О проекте</h2>
+                <p>Технологическая платформа для доступа к цифровым коллекциям музеев мира</p>
+            </header>
+
+            <section>
+                <h3>Что такое "Музейные коллекции"?</h3>
+                <p>Это инновационный цифровой проект, создающий единое пространство для доступа к оцифрованным экспонатам ведущих музеев. Наша платформа объединяет технологии и культуру, предоставляя:</p>
+                
+                <div class="project-features">
+                    <div class="feature-card">
+                        <h3>Высококачественные изображения</h3>
+                        <p>Экспонаты в разрешении до 8K с возможностью детального рассмотрения</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>3D-модели артефактов</h3>
+                        <p>Интерактивный просмотр скульптур и археологических находок со всех сторон</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Профессиональные аудиогиды</h3>
+                        <p>Экскурсии от ведущих искусствоведов на нескольких языках</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Виртуальные туры</h3>
+                        <p>Панорамные экскурсии по залам музеев с навигацией</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Персонализированные коллекции</h3>
+                        <p>Возможность создавать собственные подборки экспонатов</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Образовательные программы</h3>
+                        <p>Тематические подборки и готовые маршруты для студентов</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tech-specs">
+                <h3>Технические характеристики</h3>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <strong>Форматы контента:</strong>
+                        <p>JPEG, PNG, GLTF, OBJ, MP4, WebM</p>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Разрешение изображений:</strong>
+                        <p>До 8192×8192 пикселей</p>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Поддерживаемые устройства:</strong>
+                        <p>ПК, смартфоны, планшеты, VR-очки</p>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Системные требования:</strong>
+                        <p>Chrome, Firefox, Safari последних версий</p>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Хранение данных:</strong>
+                        <p>Облачное хранилище с репликацией</p>
+                    </div>
+                    <div class="spec-item">
+                        <strong>API для партнеров:</strong>
+                        <p>RESTful API с OAuth 2.0</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Для кого создан проект?</h3>
+                <div class="project-features">
+                    <div class="feature-card">
+                        <h3>Студенты и преподаватели</h3>
+                        <p>Доступ к учебным материалам и создание собственных коллекций для занятий</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Исследователи</h3>
+                        <p>Работа с высококачественными изображениями и метаданными</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Любители искусства</h3>
+                        <p>Возможность увидеть шедевры, не выходя из дома</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Музеи-участники</h3>
+                <p>Более 50 ведущих музеев мира уже предоставили свои коллекции:</p>
+                
+                <div class="partners-logos">
+                    <img src="images/hermitage.jpg" alt="Эрмитаж" class="partner-logo">
+                    <img src="images/louvre.jpg" alt="Лувр" class="partner-logo">
+                    <img src="images/met.jpg" alt="Метрополитен" class="partner-logo">
+                    <img src="images/tretyakov.jpg" alt="Третьяковская галерея" class="partner-logo">
+                    <img src="Images/british-museum.jpg" alt="Британский музей" class="partner-logo">
+                </div>
+                
+                <a href="partners.html" class="btn secondary">Все партнеры</a>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
