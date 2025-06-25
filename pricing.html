@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тарифы - Подписка на музейные коллекции</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Стили для страницы тарифов */
+.main-content {
+    padding: 30px;
+    background-color: white;
+}
+
+.content-header {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.content-header h2 {
+    color: #2c3e50;
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* Стили для тарифных планов */
+.pricing-plans {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.plan {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 25px;
+    width: 280px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.plan h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #3498db;
+    margin: 15px 0;
+}
+
+.price span {
+    font-size: 1rem;
+    color: #95a5a6;
+    font-weight: normal;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.features li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.features li:last-child {
+    border-bottom: none;
+}
+
+.recommended {
+    border: 2px solid #3498db;
+}
+
+.recommended-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .pricing-plans {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .plan {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+        /* Дополнительные стили для страницы тарифов */
+        .contract-section {
+            margin-top: 50px;
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .contract-content {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 20px;
+            background: white;
+            border: 1px solid #eee;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        
+        .contract-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .contract-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #2c3e50;
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .contract-download:hover {
+            background: #3498db;
+            color: white;
+        }
+        
+        .contract-download::before {
+            content: "↓";
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://i.pinimg.com/736x/de/b9/89/deb989dcc92f499d398503087349576f.jpg" alt="Логотип музея">
+                <h1>Музейные коллекции</h1>
+            </div>
+             <nav class="side-menu">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="menu-category">Коллекции</li>
+                    <li><a href="collections.html">Все коллекции</a></li>
+                    <li><a href="painting.html">Живопись</a></li>
+                    <li><a href="sculpture.html">Скульптура</a></li>
+                    <li><a href="archeology.html">Археология</a></li>
+                    <li class="menu-category">Информация</li>
+                    <li><a href="about.html">О проекте</a></li>
+                    <li><a href="sitemap.html">Карта сайта</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="pricing.html">Тарифы</a></li>
+                    <li><a href="how-it-works.html">Как это работает</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li class="menu-category">Компания</li>
+                    <li><a href="about-company.html">О компании</a></li>
+                    <li><a href="partners.html">Партнеры</a></li>
+                    <li><a href="vacancies.html">Вакансии</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li class="menu-category">Аккаунт</li>
+                     <li><a href="profile.html">Профиль</a></li>
+                    <li><a href="login.html">Войти</a></li>
+                    <li><a href="register.html">Регистрация</a></li>
+                    <li><a href="admin.html">Админ-панель</a></li>
+                </ul>
+            <div class="footer-info">
+                <p>© 2025 Музейные коллекции</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Тарифные планы</h2>
+            </header>
+
+            <section class="pricing-plans">
+                <div class="plan">
+                    <h3>Базовый</h3>
+                    <div class="price">499 ₽<span>/месяц</span></div>
+                    <ul class="features">
+                        <li>Доступ к 50% коллекций</li>
+                        <li>Базовые описания</li>
+                        <li>5 виртуальных туров в месяц</li>
+                    </ul>
+                    <a href="register.html" class="btn primary">Выбрать</a>
+                </div>
+
+                <div class="plan recommended">
+                    <div class="recommended-badge">Рекомендуем</div>
+                    <h3>Стандарт</h3>
+                    <div class="price">999 ₽<span>/месяц</span></div>
+                    <ul class="features">
+                        <li>Доступ к 100% коллекций</li>
+                        <li>Подробные описания и аудиогиды</li>
+                        <li>15 виртуальных туров в месяц</li>
+                    </ul>
+                    <a href="register.html" class="btn primary">Выбрать</a>
+                </div>
+
+                <div class="plan">
+                    <h3>Премиум</h3>
+                    <div class="price">1999 ₽<span>/месяц</span></div>
+                    <ul class="features">
+                        <li>Доступ к 100% коллекций</li>
+                        <li>Эксклюзивные материалы</li>
+                        <li>Неограниченные виртуальные туры</li>
+                        <li>Персональный гид</li>
+                    </ul>
+                    <a href="register.html" class="btn primary">Выбрать</a>
+                </div>
+            </section>
+
+            <section class="contract-section">
+                <h2>Типовой договор оказания услуг</h2>
+                <p>При подключении подписки вы автоматически принимаете условия договора:</p>
+                
+                <div class="contract-content">
+                    <h3>ДОГОВОР ПУБЛИЧНОЙ ОФЕРТЫ</h3>
+                    <p><strong>г. Бугуруслан «27» июня 2025 г.</strong></p>
+                    
+                    <h4>1. Предмет договора</h4>
+                    <p>1.1. Исполнитель предоставляет Пользователю доступ к цифровым коллекциям музеев согласно выбранному тарифному плану.</p>
+                    
+                    <h4>2. Обязанности сторон</h4>
+                    <p>2.1. Исполнитель обязуется:<br>
+                    - Обеспечить доступ к контенту согласно тарифу<br>
+                    - Поддерживать работоспособность сервиса</p>
+                    
+                    <p>2.2. Пользователь обязуется:<br>
+                    - Оплачивать подписку в установленные сроки<br>
+                    - Не передавать доступ третьим лицам</p>
+                    
+                    <h4>3. Стоимость и порядок расчетов</h4>
+                    <p>3.1. Стоимость услуг определяется выбранным тарифным планом.</p>
+                    
+                    <h4>4. Ответственность сторон</h4>
+                    <p>4.1. Исполнитель не несет ответственности за временную недоступность сервиса.</p>
+                    
+                    <h4>5. Срок действия договора</h4>
+                    <p>5.1. Договор действует до момента отключения подписки.</p>
+                    
+                    <p><strong>Полная версия договора доступна для скачивания:</strong></p>
+                </div>
+                
+                <div class="contract-actions">
+                    <a href="files/dogovor-oferta.docx" class="contract-download" download>Скачать договор (DOCX, 45 КБ)</a>
+                    <a href="files/dogovor-oferta.pdf" class="contract-download" download>Скачать договор (PDF, 120 КБ)</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
