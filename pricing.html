@@ -271,11 +271,30 @@
                 <div class="contract-actions">
                     <a href="files/dogovor-oferta.docx" class="contract-download" download>Скачать договор (DOCX, 45 КБ)</a>
                     <a href="files/dogovor-oferta.pdf" class="contract-download" download>Скачать договор (PDF, 120 КБ)</a>
+                    <a href="files/price.docx" class="contract-download" download>Скачать прайс-лист (DOCX, 17 КБ)</a>
+                    <a href="files/price.pdf" class="contract-download" download>Скачать прайс-лист (PDF, 157 КБ)</a>
                 </div>
             </section>
         </main>
     </div>
 
     <script src="js/script.js"></script>
+    <div id="counter">Посещений: <span id="visit-count">0</span></div>
+
+    <script>
+        // Проверяем, есть ли уже счетчик в localStorage
+        let visitCount = localStorage.getItem('visitCount');
+
+        // Если нет — создаем (первый визит)
+        if (!visitCount) {
+            visitCount = 1;
+        } else {
+            visitCount = parseInt(visitCount) + 1;
+        }
+
+        // Обновляем данные
+        localStorage.setItem('visitCount', visitCount);
+        document.getElementById('visit-count').textContent = visitCount;
+    </script>
 </body>
 </html>
