@@ -126,10 +126,6 @@
             </nav>
             <div class="footer-info">
                 <p>© 2025 Музейные коллекции</p>
-                <div id="counter">
-                    <img src="https://counter.yadro.ru/hit?t44.1;rhttps%3A%2F%2Fexample.com%2F;s1600*1200*24;uhttps%3A%2F%2Fexample.com%2Fvacancies.html;0.9" 
-                         alt="Счетчик" title="Счетчик посещений" border="0" width="1" height="1">
-                </div>
             </div>
         </aside>
 
@@ -256,6 +252,23 @@
             this.reset();
             document.getElementById('applyForm').style.display = 'none';
         });
+    </script>
+    <div id="counter">Посещений: <span id="visit-count">0</span></div>
+
+    <script>
+        // Проверяем, есть ли уже счетчик в localStorage
+        let visitCount = localStorage.getItem('visitCount');
+
+        // Если нет — создаем (первый визит)
+        if (!visitCount) {
+            visitCount = 1;
+        } else {
+            visitCount = parseInt(visitCount) + 1;
+        }
+
+        // Обновляем данные
+        localStorage.setItem('visitCount', visitCount);
+        document.getElementById('visit-count').textContent = visitCount;
     </script>
 </body>
 </html>
